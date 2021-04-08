@@ -149,6 +149,7 @@ export default {
 @media (max-width: @MQMobile) {
   .page-edit {
     .edit-link {
+      font-size: 0.8em;
       margin-bottom: 0.5rem;
     }
 
