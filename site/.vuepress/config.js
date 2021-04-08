@@ -60,6 +60,13 @@ module.exports = {
         placeholder: '在此留言...',
         path: '<%- window.location.pathname %>'
       }
+    }],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        moment.locale(lang)
+        return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
+      }
     }]
   ]/*,
   chainWebpack (config, isServer) {
