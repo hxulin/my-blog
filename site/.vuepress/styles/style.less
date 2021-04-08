@@ -1,0 +1,73 @@
+/* 滚动条整体样式 */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 滚动条里面小方块 */
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #C7C9CC;
+}
+
+/* 滚动条里面轨道 */
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.encrypted-header {
+
+  input {
+    border-radius: 5px;
+    padding: 2px 8px;
+    background-color: #e8ffff;
+    box-shadow: 0 0 3px #008b8b;
+    margin: .5em 1em .5em 0;
+  }
+
+  input, button {
+    border-style: none;
+    font: inherit;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+}
+
+.@{contentClass}, .page-nav, .page-edit {
+  max-width: 960px !important;
+}
+
+#valine-comment {
+  max-width: 960px;
+  box-sizing: border-box;
+  margin: 2rem auto 0;
+  padding: 0 6rem
+}
+
+@media (max-width: @MQNarrow) {
+  #valine-comment:not(.custom) {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: @MQMobileNarrow) {
+  #valine-comment:not(.custom) {
+    padding: 0 1.6rem 1.6rem;
+  }
+
+  .@{contentClass} {
+    padding-bottom: 0 !important;
+  }
+}
+
+.message-page .page-edit, .close-comments-page #valine-comment {
+  display: none;
+}
+
+.custom-block {
+
+  &.tip, &.warning, &.danger {
+    padding: 0.1rem 1.5rem 0.8rem;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "site/.vuepress/theme"
+  ],
+  "scripts": {
+    "dev": "vuepress dev site --no-cache --temp .temp/dev",
+    "build": "vuepress build site --no-cache",
+    "check": "encrypt check --source-dir site --key-file keys.json --temp .temp/encrypt",
+    "encrypt": "encrypt encrypt --source-dir site --key-file keys.json --temp .temp/encrypt",
+    "decrypt": "encrypt decrypt --source-dir site --key-file keys.json --temp .temp/encrypt",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@oak-tree-house/vuepress-plugin-encrypt": "^1.0.1",
+    "core-js": "^2.6.12",
+    "husky": "^5.2.0",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-comment": "file:packages/vuepress-plugin-comment"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.7.4",
+    "vuepress-theme-antdocs": "file:site/.vuepress/theme"
+  },
+  "author": "hxulin",
+  "license": "MIT"
+}
