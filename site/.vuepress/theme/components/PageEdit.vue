@@ -122,6 +122,7 @@ export default {
 
   .edit-link {
     display: inline-block;
+    font-size: 0.9em;
 
     a {
       color: lighten(@textColor, 25%);
