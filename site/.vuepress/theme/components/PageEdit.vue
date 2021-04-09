@@ -51,7 +51,7 @@ export default {
 
       const {
         repo,
-        docsDir = 'site',
+        docsDir = '',
         docsBranch = 'master',
         docsRepo = repo
       } = this.$site.themeConfig

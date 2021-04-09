@@ -35,7 +35,9 @@ module.exports = {
     lastUpdated: "上次更新",
     repo: "https://github.com/hxulin/my-blog",
     editLinks: true,
-    editLinkText: "在 GitHub 上编辑此页"
+    editLinkText: "在 GitHub 上编辑此页",
+    docsDir: 'site',
+    docsBranch: 'master'
   },
   plugins: [
     ['@oak-tree-house/encrypt', {
