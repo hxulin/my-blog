@@ -1,5 +1,6 @@
 module.exports = [
   '_posts/',
+  '_posts/2021-04-11-mongodb-replica-set-deploy',
   '_posts/2021-04-10-nginx-compile-install-with-https',
   '_posts/2021-03-28-gluster-file-system-install',
   '_posts/2021-03-27-centos7-turn-off-selinux-firewall',
