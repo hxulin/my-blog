@@ -205,7 +205,7 @@ systemctl start mongodb
 ```
 
 ```js
-// priority 为权重，权重大的会被置为 Primary 节点
+// priority 为权重，默认值是1，权重大的会被置为 Primary 节点
 conf = {
   _id: "rs1",
   members: [
