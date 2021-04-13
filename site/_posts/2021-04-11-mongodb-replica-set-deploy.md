@@ -252,11 +252,11 @@ rs1:SECONDARY> rs.reconfig(conf, { force: true })
 强制让一个节点成为 Primary，可以将该节点的优先级设置成最高。
 
 ```js
-cfg = rs.conf()
-cfg.members[0].priority = 5
-cfg.members[1].priority = 1
-cfg.members[2].priority = 1
-rs.reconfig(cfg)
+conf = rs.conf()
+conf.members[0].priority = 5
+conf.members[1].priority = 1
+conf.members[2].priority = 1
+rs.reconfig(conf)
 ```
 
 :::
