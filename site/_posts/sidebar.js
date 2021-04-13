@@ -1,5 +1,6 @@
 module.exports = [
   '_posts/',
+  '_posts/2021-04-13-css3-flex-horizontal-vertical-center',
   '_posts/2021-04-11-vi-common-commands-summary',
   '_posts/2021-04-11-mongodb-replica-set-deploy',
   '_posts/2021-04-10-nginx-compile-install-with-https',
