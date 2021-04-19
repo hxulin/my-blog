@@ -1,7 +1,7 @@
 ---
 permalink: /
 home: true
-heroImage: /assets/img/logo.png
+heroImage: https://cdn.jsdelivr.net/gh/hxulin/hxulin.github.io/assets/img/logo.png
 actionText: 马上进入 →
 actionLink: /guide/
 title: 首页

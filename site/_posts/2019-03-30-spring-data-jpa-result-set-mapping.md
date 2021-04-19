@@ -106,7 +106,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 此处直接调用 `JPA` 接口方法，将会返回 `List<Object[]>` 类型，格式如下，非常不方便我们进行数据处理。
 
-<img :src="$withBase('/assets/img/20190330/spring-data-jpa-result-set-mapping/list-object-log.png')" alt="list-object-log.png">
+<img :src="$page.baseUrl + 'assets/img/20190330/spring-data-jpa-result-set-mapping/list-object-log.png'" alt="list-object-log.png">
 
 ### Service 层方法
 
@@ -140,7 +140,7 @@ public void testQuery() {
 }
 ```
 
-<img :src="$withBase('/assets/img/20190330/spring-data-jpa-result-set-mapping/test-result.png')" alt="test-result.png">
+<img :src="$page.baseUrl + 'assets/img/20190330/spring-data-jpa-result-set-mapping/test-result.png'" alt="test-result.png">
 
 <center>根据构造器的自定义参数映射后的结果</center>
 

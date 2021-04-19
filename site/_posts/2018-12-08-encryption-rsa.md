@@ -14,7 +14,7 @@ title: Java 和 js 互加解密(2) — RSA非对称加密算法
 >
 > 私钥签名，公钥验签
 
-<img :src="$withBase('/assets/img/20181208/encryption-rsa/results-screenshots.png')" alt="Java 和 js 互加解密 — RSA非对称加密">
+<img :src="$page.baseUrl + 'assets/img/20181208/encryption-rsa/results-screenshots.png'" alt="Java 和 js 互加解密 — RSA非对称加密">
 
 Java 和 js 互加解密 — RSA非对称加密
 
@@ -417,7 +417,7 @@ public class RSAUtilsTest {
 
 运行结果：
 
-<img :src="$withBase('/assets/img/20181208/encryption-rsa/rsa-test.png')" alt="RSA 加解密测试" style="margin-bottom: .3rem">
+<img :src="$page.baseUrl + 'assets/img/20181208/encryption-rsa/rsa-test.png'" alt="RSA 加解密测试" style="margin-bottom: .3rem">
 
 RSA 加解密测试
 

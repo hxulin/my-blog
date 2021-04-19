@@ -10,7 +10,7 @@ Java语言有一个重要的理念：万物皆对象。本文我们将要探讨�
 
 下图是 JDK 中顶级父类 Object 的结构图，从图中我们可以看到 Object 类为子类提供了可访问的 equals 和 hashCode 方法。
 
-<img :src="$withBase('/assets/img/20181217/equals-hashcode-method/object-structure.png')" alt="object-structure.png" style="margin-bottom: .3rem">
+<img :src="$page.baseUrl + 'assets/img/20181217/equals-hashcode-method/object-structure.png'" alt="object-structure.png" style="margin-bottom: .3rem">
 
 Object 类的结构图
 

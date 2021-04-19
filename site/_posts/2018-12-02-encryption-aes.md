@@ -10,7 +10,7 @@ title: Java 和 js 互加解密(1) — AES对称加密算法
 
 js 前台加密数据，Java 后台解密数据。
 
-<img :src="$withBase('/assets/img/20181202/encryption-aes/results-screenshots.png')" alt="Java 和 js 互加解密 — AES对称加密">
+<img :src="$page.baseUrl + 'assets/img/20181202/encryption-aes/results-screenshots.png'" alt="Java 和 js 互加解密 — AES对称加密">
 
 Java 和 js 互加解密 — AES对称加密
 

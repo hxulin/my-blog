@@ -19,7 +19,8 @@
     "core-js": "^2.6.12",
     "husky": "^5.2.0",
     "vuepress": "^1.8.2",
-    "vuepress-plugin-comment": "file:packages/vuepress-plugin-comment"
+    "vuepress-plugin-comment": "file:packages/vuepress-plugin-comment",
+    "vuepress-plugin-config": "file:packages/vuepress-plugin-config"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.4",

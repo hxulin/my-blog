@@ -179,7 +179,7 @@ public static void main(String[] args) {
 
 \####1，jdk6中的解释
 
-<img :src="$withBase('/assets/img/20181222/in-depth-understanding-string-intern/jdk6.png')" alt="jdk6图">
+<img :src="$page.baseUrl + 'assets/img/20181222/in-depth-understanding-string-intern/jdk6.png'" alt="jdk6图">
 
 注：图中绿色线条代表 string 对象的内容指向。 黑色线条代表地址指向。
 
@@ -191,7 +191,7 @@ public static void main(String[] args) {
 
 正式因为字符串常量池移动到 JAVA Heap 区域后，再来解释为什么会有上述的打印结果。
 
-<img :src="$withBase('/assets/img/20181222/in-depth-understanding-string-intern/jdk7-1.png')" alt="jdk7图1">
+<img :src="$page.baseUrl + 'assets/img/20181222/in-depth-understanding-string-intern/jdk7-1.png'" alt="jdk7图1">
 
 - 在第一段代码中，先看 s3和s4字符串。`String s3 = new String("1") + new String("1");`，这句代码中现在生成了2最终个对象，是字符串常量池中的“1” 和 JAVA Heap 中的 s3引用指向的对象。中间还有2个匿名的`new String("1")`我们不去讨论它们。此时s3引用对象内容是"11"，但此时常量池中是没有 “11”对象的。
 - 接下来`s3.intern();`这一句代码，是将 s3中的“11”字符串放入 String 常量池中，因为此时常量池中不存在“11”字符串，因此常规做法是跟 jdk6 图中表示的那样，在常量池中生成一个 "11" 的对象，关键点是 jdk7 中常量池不在 Perm 区域了，这块做了调整。常量池中不需要再存储一份对象了，可以直接存储堆中的引用。这份引用指向 s3 引用的对象。 也就是说引用地址是相同的。
@@ -199,7 +199,7 @@ public static void main(String[] args) {
 - 再看 s 和 s2 对象。 `String s = new String("1");` 第一句代码，生成了2个对象。常量池中的“1” 和 JAVA Heap 中的字符串对象。`s.intern();` 这一句是 s 对象去常量池中寻找后发现 “1” 已经在常量池里了。
 - 接下来`String s2 = "1";` 这句代码是生成一个 s2的引用指向常量池中的“1”对象。 结果就是 s 和 s2 的引用地址明显不同。图中画的很清晰。
 
-<img :src="$withBase('/assets/img/20181222/in-depth-understanding-string-intern/jdk7-2.png')" alt="jdk7图2">
+<img :src="$page.baseUrl + 'assets/img/20181222/in-depth-understanding-string-intern/jdk7-2.png'" alt="jdk7图2">
 
 - 来看第二段代码，从上边第二幅图中观察。第一段代码和第二段代码的改变就是 `s3.intern();` 的顺序是放在`String s4 = "11";`后了。这样，首先执行`String s4 = "11";`声明 s4 的时候常量池中是不存在“11”对象的，执行完毕后，“11“对象是 s4 声明产生的新对象。然后再执行`s3.intern();`时，常量池中“11”对象已经存在了，因此 s3 和 s4 的引用是不同的。
 - 第二段代码中的 s 和 s2 代码中，`s.intern();`，这一句往后放也不会有什么影响了，因为对象池中在执行第一句代码`String s = new String("1");`的时候已经生成“1”对象了。下边的s2声明都是直接从常量池中取地址引用的。 s 和 s2 的引用地址是不会相等的。
@@ -243,11 +243,11 @@ public static void main(String[] args) throws Exception {
 
 2160ms
 
-<img :src="$withBase('/assets/img/20181222/in-depth-understanding-string-intern/with-intern.png')" alt="使用 intern">
+<img :src="$page.baseUrl + 'assets/img/20181222/in-depth-understanding-string-intern/with-intern.png'" alt="使用 intern">
 
 826ms
 
-<img :src="$withBase('/assets/img/20181222/in-depth-understanding-string-intern/without-intern.png')" alt="未使用 intern">
+<img :src="$page.baseUrl + 'assets/img/20181222/in-depth-understanding-string-intern/without-intern.png'" alt="未使用 intern">
 
 通过上述结果，我们发现不使用 intern 的代码生成了1000w 个字符串，占用了大约640m 空间。 使用了 intern 的代码生成了1345个字符串，占用总空间 133k 左右。其实通过观察程序中只是用到了10个字符串，所以准确计算后应该是正好相差100w 倍。虽然例子有些极端，但确实能准确反应出 intern 使用后产生的巨大空间节省。
 

@@ -14,7 +14,7 @@ Spring 最为核心的理念是 IoC（控制反转）和 AOP（面向切面编�
 
 &nbsp;<font color="red">Spring IoC 容器的设计主要是基于 BeanFactory 和 ApplicationContext 两个接口，其中 ApplicationContext 是 BeanFactory 的子接口之一</font>，换句话说 BeanFactory 是 Spring IoC 容器所定义的最底层接口，而 ApplicationContext 是其高级接口之一，并且对 BeanFactory 功能做了许多有用的扩展，所以在绝大部分的工作场景下，都会使用 ApplicationContext 作为 Spring IoC 容器。下图展示了 Spring 相关的 IoC 容器接口的主要设计。
 
-<img :src="$withBase('/assets/img/20190115/spring-ioc-container/spring-ioc-interface.png')" alt="spring-ioc-interface.png">
+<img :src="$page.baseUrl + 'assets/img/20190115/spring-ioc-container/spring-ioc-interface.png'" alt="spring-ioc-interface.png">
 
 <center style="margin: .5rem 0 1rem">Spring IoC 容器接口的设计</center>
 
@@ -93,7 +93,7 @@ public interface BeanFactory {
 
 这就是 Spring IoC 最底层的设计，所有关于 Spring IoC 的容器将会遵循它所定义的方法。
 
-从 <a :href="$withBase('/assets/img/20190115/spring-ioc-container/spring-ioc-interface.png')" target="_blank">IoC 容器接口的设计图</a> 中可以看到，为了扩展更多的功能，ApplicationContext 接口扩展了许许多多的接口，因此它的功能十分强大，而 WebApplicationContext 也扩展了它，在实际应用中常常使用的是 ApplicationContext 接口，因为 BeanFactory 的方法和功能较少。具体的 ApplicationContext 的实现类会使用在某一个领域，比如 Spring MVC 的 GenericWebApplicationContext，就广泛使用于 Java Web 工程中。 
+从 <a :href="$page.baseUrl + 'assets/img/20190115/spring-ioc-container/spring-ioc-interface.png'" target="_blank">IoC 容器接口的设计图</a> 中可以看到，为了扩展更多的功能，ApplicationContext 接口扩展了许许多多的接口，因此它的功能十分强大，而 WebApplicationContext 也扩展了它，在实际应用中常常使用的是 ApplicationContext 接口，因为 BeanFactory 的方法和功能较少。具体的 ApplicationContext 的实现类会使用在某一个领域，比如 Spring MVC 的 GenericWebApplicationContext，就广泛使用于 Java Web 工程中。 
 
 
 ## ClassPathXmlApplicationContext
@@ -133,7 +133,7 @@ Spring IoC 容器的本质目的就是为了管理 Bean。对于 Bean 而言，�
 
 生命周期主要是为了了解 Spring IoC 容器初始化和销毁 Bean 的过程，通过对它的学习就可以知道如何在初始化和销毁的时候加入自定义的方法，以满足特定的需求。
 
-<img :src="$withBase('/assets/img/20190115/spring-ioc-container/bean-life-cycle.png')" alt="bean-life-cycle.png">
+<img :src="$page.baseUrl + 'assets/img/20190115/spring-ioc-container/bean-life-cycle.png'" alt="bean-life-cycle.png">
 
 <center style="margin-top: .3rem">Bean 的生命周期</center>
 
@@ -166,9 +166,9 @@ Spring IoC 容器的本质目的就是为了管理 Bean。对于 Bean 而言，�
 
 
 
-注意 <a :href="$withBase('/assets/img/20190115/spring-ioc-container/bean-life-cycle.png')" target="_blank">Bean 生命周期图</a> 中的注释文字，因为有些步骤是在一些条件下才会执行的，如果不注意这些，往往就发现明明实现了一些接口，但是该方法并没有被执行。上面的步骤结合 <a :href="$withBase('/assets/img/20190115/spring-ioc-container/spring-ioc-interface.png')" target="_blank">IoC 容器接口的设计图</a> 看，就会发现所有的 Spring IoC 容器最低的要求是实现 BeanFactory 接口而己，而非 ApplicationContext 接口，<font color="red">如果采用了非 ApplicationContext 子类创建 Spring IoC 容器，那么即使是实现了 ApplicationContextAware 的 setApplicationContext 方法，它也不会在生命周期之中被调用。</font>
+注意 <a :href="$page.baseUrl + 'assets/img/20190115/spring-ioc-container/bean-life-cycle.png'" target="_blank">Bean 生命周期图</a> 中的注释文字，因为有些步骤是在一些条件下才会执行的，如果不注意这些，往往就发现明明实现了一些接口，但是该方法并没有被执行。上面的步骤结合 <a :href="$page.baseUrl + '/assets/img/20190115/spring-ioc-container/spring-ioc-interface.png'" target="_blank">IoC 容器接口的设计图</a> 看，就会发现所有的 Spring IoC 容器最低的要求是实现 BeanFactory 接口而己，而非 ApplicationContext 接口，<font color="red">如果采用了非 ApplicationContext 子类创建 Spring IoC 容器，那么即使是实现了 ApplicationContextAware 的 setApplicationContext 方法，它也不会在生命周期之中被调用。</font>
 
-此外，还要注意这些接口是针对什么而言的，上述生命周期的接口，大部分是针对单个 Bean 而言的；BeanPostProcessor 接口则是针对所有 Bean 而言的。当一个 Bean 实现了上述的接口，我们只需要在 Spring IoC 容器中定义它就可以了，Spring IoC 容器会自动识别，并且按照 <a :href="$withBase('/assets/img/20190115/spring-ioc-container/bean-life-cycle.png')" target="_blank">Bean 生命周期图</a> 的顺序执行。
+此外，还要注意这些接口是针对什么而言的，上述生命周期的接口，大部分是针对单个 Bean 而言的；BeanPostProcessor 接口则是针对所有 Bean 而言的。当一个 Bean 实现了上述的接口，我们只需要在 Spring IoC 容器中定义它就可以了，Spring IoC 容器会自动识别，并且按照 <a :href="$page.baseUrl + 'assets/img/20190115/spring-ioc-container/bean-life-cycle.png'" target="_blank">Bean 生命周期图</a> 的顺序执行。
 
 ---
 本文是个人读书笔记，整理自：[Java EE互联网轻量级框架整合开发](https://book.douban.com/subject/27090950/)，相关测试代码见：[Spring 练习第 4 小节](https://github.com/hxulin/whampoa/tree/master/spring#4spring-bean-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)

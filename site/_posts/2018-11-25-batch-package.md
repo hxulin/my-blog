@@ -21,7 +21,7 @@ title: 批量复制 War/Jar 文件
 
 解压待复制的 War 文件，修改指定的文本文件内容，再进行二次打包。
 
-<img :src="$withBase('/assets/img/20181125/batch-package/batch-package.png')" alt="简单的说明图">
+<img :src="$page.baseUrl + 'assets/img/20181125/batch-package/batch-package.png'" alt="简单的说明图">
 
 ### 环境要求
 
@@ -51,7 +51,7 @@ title: 批量复制 War/Jar 文件
 
 程序完成个性化的复制操作，需要在核心配置文件 config.json 中进行相关设置。config.json 的结构如下：
 
-<img :src="$withBase('/assets/img/20181125/batch-package/config-file-structure.png')" style="margin: .3rem 0 1rem" alt="JSON配置文件结构图">
+<img :src="$page.baseUrl + 'assets/img/20181125/batch-package/config-file-structure.png'" style="margin: .3rem 0 1rem" alt="JSON配置文件结构图">
 
 **下面对 JSON 配置的各个节点进行相关说明：**
 

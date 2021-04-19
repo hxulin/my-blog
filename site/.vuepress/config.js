@@ -1,10 +1,15 @@
+const base = '/'
+const baseUrl = process.env.NODE_ENV === 'production'
+  ? 'https://cdn.jsdelivr.net/gh/hxulin/hxulin.github.io' + base
+  : base
+
 module.exports = {
   title: "黄小鱼的个人博客",
   description: "日常笔记，个人随笔",
   port: "80",
-  base: "/",
+  base,
   head: [
-    ["link", {rel: "icon", href: "/assets/img/favicon.png"}],
+    ["link", {rel: "icon", href: baseUrl + "assets/img/favicon.png"}],
     ["link", {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"}],
     ["script", {type: "text/javascript", src: "https://hm.baidu.com/hm.js?7416f9f03c8c29e159637a2b26fa47ac"}]
   ],
@@ -40,6 +45,9 @@ module.exports = {
     docsBranch: 'master'
   },
   plugins: [
+    ['vuepress-plugin-config', {
+      baseUrl
+    }],
     ['@oak-tree-house/encrypt', {
       contentTitle: '加密的内容',
       unencryptedText: '内容已显示在下方，发布时应当加密。',
@@ -71,11 +79,15 @@ module.exports = {
         return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
       }
     }]
-  ]/*,
-  chainWebpack (config, isServer) {
+  ],
+  /*chainWebpack (config, isServer) {
 
-  },
+  },*/
   configureWebpack: (config, isServer) => {
-
-  }*/
-};
+    return {
+      output: {
+        publicPath: baseUrl
+      }
+    }
+  }
+}
