@@ -33,7 +33,7 @@ pageClass: mongo-deploy-page
 ## MongoDB 集群部署的两种方式
 
 <a-collapse defaultActiveKey="2">
-  <a-collapse-panel key="1" header="MongoDB 主从复制（废弃）">
+  <a-collapse-panel key="1" header="MongoDB 主从复制（已废弃）">
 
 **主从模式（master-slave）是 MongoDB 最早使用的复制方式，**<font color="red">**在新版的 Mongo 中已经被移除。**</font>
 
