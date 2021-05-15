@@ -1,5 +1,6 @@
 module.exports = [
   '_posts/',
+  '_posts/2021-05-12-vmware-centos7-boot-optimization',
   '_posts/2021-05-07-idea-hot-key-ctrl-shift-f-invalid',
   '_posts/2021-04-13-css3-flex-horizontal-vertical-center',
   '_posts/2021-04-11-vi-common-commands-summary',
