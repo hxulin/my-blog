@@ -39,7 +39,7 @@ module.exports = {
       text: "留言",
       link: "/message/"
     }],
-    sidebar: require("../_posts/sidebar"),
+    sidebar: require("../sidebar"),
     sidebarDepth: 0,
     lastUpdated: "上次更新",
     repo: "https://github.com/hxulin/my-blog",

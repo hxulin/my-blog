@@ -22,6 +22,7 @@ module.exports = {
     '_posts/2018-11-25-batch-package'
   ],
   '/tidbits/': [
-    ''
+    '',
+    '2021-03-14-document-encryption-plugin'
   ]
 };
