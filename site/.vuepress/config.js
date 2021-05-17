@@ -11,6 +11,7 @@ module.exports = {
   head: [
     ["link", {rel: "icon", href: baseUrl + "assets/img/favicon.png"}],
     ["link", {rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"}],
+    ["script", {type: "text/javascript", src: "https://cdn.jsdelivr.net/npm/md5-js@0.0.3/md5.min.js"}],
     ["script", {type: "text/javascript", src: "https://hm.baidu.com/hm.js?7416f9f03c8c29e159637a2b26fa47ac"}]
   ],
   locales: {
@@ -31,6 +32,9 @@ module.exports = {
     }, {
       text: "文章",
       link: "/guide/"
+    }, {
+      text: "花絮",
+      link: "/tidbits/"
     }, {
       text: "留言",
       link: "/message/"
