@@ -1,6 +1,6 @@
 ---
 permalink: /tidbits/keys
-pageClass: close-comments-page
+pageClass: close-footer close-comments
 comments: false
 editLink: false
 lastUpdated: false

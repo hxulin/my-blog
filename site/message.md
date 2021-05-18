@@ -1,7 +1,7 @@
 ---
 title: 留言板
 permalink: /message
-pageClass: message-page
+pageClass: close-footer
 editLink: false
 lastUpdated: false
 ---

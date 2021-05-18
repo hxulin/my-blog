@@ -1,6 +1,6 @@
 ---
 permalink: /tidbits
-pageClass: close-comments-page
+pageClass: close-comments
 comments: false
 ---
 

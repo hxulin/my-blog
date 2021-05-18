@@ -1,6 +1,6 @@
 ---
 permalink: /guide
-pageClass: close-comments-page
+pageClass: close-comments
 comments: false
 ---
 
