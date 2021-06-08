@@ -80,7 +80,7 @@ systemctl restart sshd
 ::: tip 快速修改
 
 ```bash
-sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config && \
+sed -i 's/#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
 systemctl restart sshd.service
 ```
 
@@ -120,7 +120,7 @@ yum clean all && yum makecache
 ### 3.4 优化网络管理
 
 ```bash
-systemctl stop NetworkManager && \
+systemctl stop NetworkManager
 systemctl disable NetworkManager
 ```
 

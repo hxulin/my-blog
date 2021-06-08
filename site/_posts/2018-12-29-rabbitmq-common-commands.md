@@ -4,7 +4,7 @@ title: RabbitMQ常用命令总结
 
 # RabbitMQ常用命令总结
 
-<post-meta date="2018-12-22" />
+<post-meta date="2018-12-29" />
 
 ## 虚拟机相关命令
 
