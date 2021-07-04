@@ -320,7 +320,7 @@ public void formatDate() {
 
 > Date generated from String 20210704 is 2021-07-04
 
-## 总结
+## 4、总结
 
 Java 8 日期时间 API 的重点：
 
