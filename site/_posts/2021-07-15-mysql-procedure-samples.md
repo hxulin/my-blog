@@ -80,7 +80,7 @@ WHILE i < cnt DO
   PREPARE stmt FROM @sql_str;
   EXECUTE stmt;
   IF @report_id != 0 THEN
-	UPDATE t_report_item SET report_id = @report_id WHERE id = _id;
+    UPDATE t_report_item SET report_id = @report_id WHERE id = _id;
   END IF;
   SET i = i + 1;
 END WHILE;
