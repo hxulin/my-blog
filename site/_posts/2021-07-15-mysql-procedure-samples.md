@@ -10,6 +10,8 @@
 
 <img :src="$page.baseUrl + 'assets/img/20210715/mysql-procedure-samples/physical-diagram-1.jpg'" alt="physical-diagram-1.jpg" style="margin-bottom: 1rem">
 
+以上的关联设计可能不合理，但历史数据表就是如此完成了早期的需求。
+
 建表 SQL 及初始化测试数据：
 
 ```sql
@@ -48,8 +50,6 @@ insert into t_report(id, user_id, content) VALUES (1, 1, 'zhangsan report'), (2,
 insert into t_report_item(id, user_id, item_content) VALUES (1, 1, 'zhangsan report item1'), (2, 1, 'zhangsan report item2'), (3, 2, 'lisi report item1'), (4, 2, 'lisi report item2');
 ```
 
-以上的关联设计可能不合理，但历史数据表就是如此完成了早期的需求。
-
 ## 变更后
 
 一个用户可以有多份报告，一份报告有多份报告子项。<b>此时报告子项直接关联用户将不知道它是属于哪份报告，会造成混淆，</b>因此修改设计如下：
@@ -60,7 +60,7 @@ insert into t_report_item(id, user_id, item_content) VALUES (1, 1, 'zhangsan rep
 
 ```sql
 /* 更新表结构 */
-alter table t_report_item add column report_id bigint after id;
+alter table t_report_item add column report_id bigint comment '报告ID' after id;
 ```
 
 ```sql
