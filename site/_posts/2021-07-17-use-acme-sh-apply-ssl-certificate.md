@@ -121,10 +121,19 @@ acme.sh --install-cert -d api.huangxulin.cn \
 
 ### 5.4 配置 Nginx HTTPS 访问
 
+生成 dhparam.pem 文件
+
+```bash
+openssl dhparam -out /usr/local/nginx/ssl/dhparam.pem 2048
+```
+
 ```nginx
 server {
     listen       443 ssl;
     server_name  api.huangxulin.cn;
+
+    ssl_dhparam  /usr/local/nginx/ssl/dhparam.pem;
+    ssl_protocols TLSv1.2;
 
     ssl_certificate      /usr/local/nginx/ssl/cert.pem;
     ssl_certificate_key  /usr/local/nginx/ssl/key.pem;
@@ -148,7 +157,17 @@ server {
 /usr/local/nginx/sbin/nginx -t && systemctl reload nginx
 ```
 
-### 5.5 检查证书是否应用
+### 5.5 验证 SSL
+
+访问 ssllabs.com 输入你的域名，检查 SSL 的配置是否都正常：
+
+[https://www.ssllabs.com/ssltest/analyze.html?d=api.huangxulin.cn](https://www.ssllabs.com/ssltest/analyze.html?d=api.huangxulin.cn)
+
+确保验证结果有 A 以上，否则根据提示调整问题。
+
+<img :src="$page.baseUrl + 'assets/img/20210717/use-acme-sh-apply-ssl-certificate/ssl-report.png'" alt="cert-info.png" style="margin-bottom: .5rem">
+
+### 5.6 查看证书信息
 
 1. 浏览器访问域名：[http://api.huangxulin.cn](http://api.huangxulin.cn) ，会自动跳转到 https 的站点。
 
@@ -156,11 +175,17 @@ server {
 
 <img :src="$page.baseUrl + 'assets/img/20210717/use-acme-sh-apply-ssl-certificate/cert-info.png'" alt="cert-info.png" style="margin-bottom: .5rem">
 
-### 5.6 更新证书
+### 5.7 更新证书
 
 目前证书在 60 天以后会自动更新，你无需任何操作。今后有可能会缩短这个时间，不过都是自动的，你不用关心。
 
-### 5.7 更新 acme.sh
+可以使用以下命令测试一下更新流程，看看能否正确执行：
+
+```bash
+acme.sh --cron -f
+```
+
+### 5.8 更新 acme.sh
 
 目前由于 acme 协议和 letsencrypt CA 都在频繁的更新，因此 acme.sh 也经常更新以保持同步。
 
@@ -184,7 +209,7 @@ acme.sh --upgrade --auto-upgrade
 acme.sh --upgrade --auto-upgrade 0
 ```
 
-### 5.8 更多用法
+### 5.9 更多用法
 
 [https://github.com/acmesh-official/acme.sh/wiki/说明](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E)
 
@@ -193,8 +218,7 @@ acme.sh --upgrade --auto-upgrade 0
 以下网站、博文等信息对本文有很大参考价值，在此感谢。
 
 - [Let's Encrypt](https://letsencrypt.org/)
-
-- [Certbot](https://certbot.eff.org/)
 - [HTTPS之acme.sh申请证书](https://www.cnblogs.com/clsn/p/10040334.html)
 - [Linux 下使用 acme.sh 配置 Let's Encrypt 免费 SSL 证书 + 通配符证书](https://sb.sb/blog/linux-acme-sh-lets-encrypt-ssl/)
+- [使用 acme.sh 给 Nginx 安装 Let’ s Encrypt 提供的免费 SSL 证书](https://ruby-china.org/topics/31983)
 
