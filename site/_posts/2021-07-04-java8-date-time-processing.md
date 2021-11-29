@@ -346,7 +346,20 @@ System.out.println("Last day of last month: " + lastDay);
 >
 > Last day of last month: 2021-10-31
 
-## 4、总结
+### 3.21 获取本周的周一、周日日期
+
+```java
+LocalDate monday = LocalDate.now().with(DayOfWeek.MONDAY);
+LocalDate sunday = LocalDate.now().with(DayOfWeek.SUNDAY);
+System.out.println("This Monday is: " + monday);
+System.out.println("This Sunday is: " + sunday);
+```
+
+> This Monday is: 2021-11-29
+>
+> This Sunday is: 2021-12-05
+
+### 4、总结
 
 Java 8 日期时间 API 的重点：
 
