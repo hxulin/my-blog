@@ -320,6 +320,32 @@ public void formatDate() {
 
 > Date generated from String 20210704 is 2021-07-04
 
+### 3.19 获取本月的第一天和最后一天
+
+```java
+LocalDate firstDay = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth());
+LocalDate lastDay = LocalDate.now().with(TemporalAdjusters.lastDayOfMonth());
+System.out.println("First day of the month: " + firstDay);
+System.out.println("Last day of the month: " + lastDay);
+```
+
+> First day of the month: 2021-11-01
+>
+> Last day of the month: 2021-11-30
+
+### 3.20 获取上个月的第一天和最后一天
+
+```java
+LocalDate firstDay = LocalDate.now().minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
+LocalDate lastDay = LocalDate.now().minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+System.out.println("First day of last month: " + firstDay);
+System.out.println("Last day of last month: " + lastDay);
+```
+
+> First day of last month: 2021-10-01
+>
+> Last day of last month: 2021-10-31
+
 ## 4、总结
 
 Java 8 日期时间 API 的重点：
