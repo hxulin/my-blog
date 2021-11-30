@@ -1,6 +1,7 @@
 module.exports = {
   '/_post': [
     '_posts/',
+    '_posts/2021-11-29-logic-delete-and-unique-key',
     '_posts/2021-07-17-use-acme-sh-apply-ssl-certificate',
     '_posts/2021-07-15-mysql-procedure-samples',
     '_posts/2021-07-04-java8-date-time-processing',
