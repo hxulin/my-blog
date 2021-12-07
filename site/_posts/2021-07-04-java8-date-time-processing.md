@@ -359,7 +359,16 @@ System.out.println("This Sunday is: " + sunday);
 >
 > This Sunday is: 2021-12-05
 
-### 4、总结
+### 3.22 判断今天是不是星期五
+
+```java
+boolean todayIsFriday = DayOfWeek.FRIDAY.equals(LocalDate.now().getDayOfWeek());
+System.out.println("Today is Friday：" + todayIsFriday);
+```
+
+> Today is Friday：false
+
+## 4、总结
 
 Java 8 日期时间 API 的重点：
 
