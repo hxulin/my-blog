@@ -72,7 +72,8 @@ module.exports = {
         appId: 'AUYB8OzTPOaAq8AcovUkhJBR-gzGzoHsz',
         appKey: 'SLMMcpwb5IvwVMyR60R0uLjd',
         placeholder: '在此留言...',
-        path: '<%- window.location.pathname %>'
+        path: '<%- window.location.pathname %>',
+        serverURLs: "https://comment.huangxulin.cn"
       }
     }],
     ['@vuepress/last-updated', {
