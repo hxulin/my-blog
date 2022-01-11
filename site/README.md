@@ -12,5 +12,5 @@ features:
   details: 无论身处开发或是运维，无论手边是 PC 还是手机，这份文档总是简单又便捷。在线查阅，触手可及。
 - title: 关于
   details: 本站内容是笔者在平时的工作和学习中整理总结，如您有好的想法或建议，欢迎给我留言。
-footer: <span>© 2018 — 2021 🐟 黄小鱼的个人博客</span><br><a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备18008214号-2</a>
+footer: <span>© 2018 — 2022 🐟 黄小鱼的个人博客</span><br><a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备18008214号-2</a>
 ---
