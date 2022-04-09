@@ -33,8 +33,8 @@ module.exports = {
       text: "文章",
       link: "/guide/"
     }, {
-      text: "花絮",
-      link: "/tidbits/"
+      text: "工具",
+      link: "/tools/"
     }, {
       text: "留言",
       link: "/message/"
@@ -80,8 +80,9 @@ module.exports = {
       transformer: (timestamp, lang) => {
         const moment = require('moment-timezone')
         moment.locale(lang)
-        moment.tz.setDefault('Asia/Shanghai')
-        return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
+        return moment(timestamp)
+          .tz('Asia/Shanghai')
+          .format('YYYY-MM-DD HH:mm:ss')
       }
     }]
   ],

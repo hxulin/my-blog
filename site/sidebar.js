@@ -26,7 +26,7 @@ module.exports = {
     '_posts/2018-12-02-encryption-aes',
     '_posts/2018-11-25-batch-package'
   ],
-  '/tidbits/': [
+  '/tools/': [
     '',
     '2021-03-14-document-encryption-plugin'
   ]

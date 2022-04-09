@@ -1,5 +1,5 @@
 ---
-permalink: /tidbits/keys
+permalink: /tools/keys
 pageClass: close-footer close-comments
 comments: false
 editLink: false
