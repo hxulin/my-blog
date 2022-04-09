@@ -33,8 +33,8 @@ module.exports = {
       text: "文章",
       link: "/guide/"
     }, {
-      text: "花絮",
-      link: "/tidbits/"
+      text: "工具",
+      link: "/tools/"
     }, {
       text: "留言",
       link: "/message/"
