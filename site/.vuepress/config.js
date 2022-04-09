@@ -80,8 +80,9 @@ module.exports = {
       transformer: (timestamp, lang) => {
         const moment = require('moment-timezone')
         moment.locale(lang)
-        moment.tz.setDefault('Asia/Shanghai')
-        return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
+        return moment(timestamp)
+          .tz('Asia/Shanghai')
+          .format('YYYY-MM-DD HH:mm:ss')
       }
     }]
   ],
