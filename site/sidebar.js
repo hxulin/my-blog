@@ -28,6 +28,8 @@ module.exports = {
   ],
   '/tools/': [
     '',
+    'base64',
+    'md5',
     '2021-03-14-document-encryption-plugin'
   ]
 };

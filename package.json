@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.7.4",
+    "js-base64": "^3.7.2",
     "moment-timezone": "^0.5.33",
     "vue-clipboard2": "^0.3.1",
     "vuepress-theme-antdocs": "file:site/.vuepress/theme"
