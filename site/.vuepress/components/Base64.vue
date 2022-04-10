@@ -6,11 +6,17 @@
         :auto-size="{minRows: 10}"
         style="font-size: 1rem"
     />
-    <div style="padding: 1rem 0; text-align: right">
+    <div class="pc-opt-bar" style="padding: 1rem 0; text-align: right">
       <a-button @click="encode" type="primary" size="large" icon="lock">编码</a-button>
       <a-button @click="decode" type="primary" size="large" icon="unlock">解码</a-button>
       <a-button @click="urlEncode" type="primary" size="large" icon="ie">URI 编码</a-button>
       <a-button @click="clear" type="danger" size="large" icon="delete">清空</a-button>
+    </div>
+    <div class="mobile-opt-bar" style="padding: 1rem 0; text-align: right">
+      <a-button @click="encode" type="primary" size="large">编码</a-button>
+      <a-button @click="decode" type="primary" size="large">解码</a-button>
+      <a-button @click="urlEncode" type="primary" size="large">URI 编码</a-button>
+      <a-button @click="clear" type="danger" size="large">清空</a-button>
     </div>
     <a-textarea
         style="color: #333; cursor: text; font-size: 1rem"
@@ -19,8 +25,11 @@
         placeholder="计算结果"
         :auto-size="{minRows: 10}"
     />
-    <div style="padding: 1rem 0; text-align: right">
+    <div class="pc-opt-bar" style="padding: 1rem 0; text-align: right">
       <a-button @click="copy" type="primary" size="large" icon="copy">复制到剪切板</a-button>
+    </div>
+    <div class="mobile-opt-bar" style="padding: 1rem 0; text-align: right">
+      <a-button @click="copy" type="primary" size="large">复制到剪切板</a-button>
     </div>
   </div>
 </template>
@@ -74,3 +83,21 @@ export default {
   }
 }
 </script>
+<style scoped>
+@media (max-width: 475px) {
+  .pc-opt-bar {
+    display: none
+  }
+  .mobile-opt-bar {
+    display: block;
+  }
+}
+@media (min-width: 476px) {
+  .pc-opt-bar {
+    display: block
+  }
+  .mobile-opt-bar {
+    display: none;
+  }
+}
+</style>
