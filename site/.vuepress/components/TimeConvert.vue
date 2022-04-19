@@ -138,7 +138,7 @@ export default {
         startDate: moment(),
         startTime: moment("00:00:00", "HH:mm:ss"),
         endDate: moment(),
-        endTime: moment("23:59:59", "HH:mm:ss"),
+        endTime: moment("00:00:00", "HH:mm:ss"),
         timeText: '',
         dayText: '',
         hourText: '',
@@ -146,6 +146,9 @@ export default {
         secondText: ''
       }
     }
+  },
+  mounted() {
+    this.computeTimeDiff()
   },
   methods: {
     onTabChange(tab) {
