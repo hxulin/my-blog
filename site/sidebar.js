@@ -30,6 +30,7 @@ module.exports = {
     '',
     'base64',
     'md5',
+    'time',
     '2021-03-14-document-encryption-plugin'
   ]
 };
